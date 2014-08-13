@@ -1,7 +1,7 @@
 /**
  * Obtained from http://stackoverflow.com/questions/6637341/use-tab-to-indent-in-textarea. By Jonathan Delgado <jonad.correo@gmail.com> (http://jonad.in/)
  */
-$(document).delegate('textarea', 'keydown', function(e) {
+$(document).delegate('textarea[data-tab="enable"]', 'keydown', function(e) {
   var keyCode = e.keyCode || e.which;
 
   if (keyCode == 9) {
