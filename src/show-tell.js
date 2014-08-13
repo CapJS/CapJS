@@ -1,5 +1,5 @@
-$(document).delegate('data-show-tell','load',function(e){
+!$(document).delegate('[data-show-tell]','click',function(e){
 
-console.log(e);
+	$($(this).data("show-tell"),this).show();
 
 });
