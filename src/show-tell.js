@@ -1,3 +1,4 @@
+// Muestra un contenido tras ser activado por un click
 !$(document).delegate('[data-show-tell-arun]','click',function(e){
 	e.preventDefault();
 
