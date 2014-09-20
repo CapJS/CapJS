@@ -1,0 +1,28 @@
+{
+  "name": "cap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/alfa30/cap",
+  "authors": [
+    "Jonathan Delgado Zamorano <jonad.correo@gmail.com>"
+  ],
+  "main": [
+    "src/btn-change-value.js",
+    "src/btn-liked.js",
+    "src/form-request.js",
+    "src/scroll-action.js",
+    "src/select-all-text.js",
+    "src/show-tell.js",
+    "src/simple-gallery.js",
+    "src/slider.js",
+    "src/tab-texarea.js"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
