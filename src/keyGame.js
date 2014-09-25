@@ -27,7 +27,7 @@
  * clase 'text-success' y tras el evento 'keyup' removera la misma clase.
  *
  */
-(function(window,$){
+!(function(window,$){
 
 	var eventKeyPress = function (event) {
 		var charCode = event.which || event.keyCode
