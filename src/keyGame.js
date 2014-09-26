@@ -16,7 +16,8 @@
  * HMTL:
  * <i
  * 	cap-keyGame="w|UP"
- * 	data-eventGame="frontCar"
+ * 	data-eventGame="frontCar.on"
+ * 	data-eventGameEnd="frontCar.off"
  * 	data-keydown-class="text-success"
  * 	data-keyup-class-rm="text-success"
  * 	class="fa fa-arrow-up fa-5x"></i>
@@ -30,6 +31,7 @@
 !(function(window,$){
 
 	var eventKeyPress = function (event) {
+
 		var charCode = event.which || event.keyCode
  	 	var charStr = String.fromCharCode(charCode).toLowerCase()
 
@@ -163,6 +165,14 @@
 		if (removeClass) {
 			$(this).removeClass(removeClass)
 		}
+
+		var eventGameEnd = $(this).data("eventgameend")
+		var inEventing = $(this).data("eventgamestating")
+
+		$(this).data("eventgamestating","off")
+		if (eventGameEnd && inEventing == "on") {
+			$(window).trigger("keyGame."+eventGameEnd)			
+		};
 	})
 	$(document).on("key.keydown","[cap-keyGame]",function(){
 		var addClass = $(this).data('keydown-class')
@@ -174,7 +184,13 @@
 			$(this).removeClass(removeClass)
 		}
 		var eventGame = $(this).data("eventgame")
-		if (eventGame) $(window).trigger("keyGame."+eventGame)
+		var inEventing = $(this).data("eventgamestating")
+
+		// console.log(inEventing)
+		if (eventGame && inEventing != "on") {
+			$(this).data("eventgamestating","on")
+			$(window).trigger("keyGame."+eventGame)
+		}
 	})
 	$(document).on("key.keypress","[cap-keyGame]",function(){
 		var addClass = $(this).data('keypress-class')
@@ -188,11 +204,18 @@
 	})
 
 	window.keyGame = {
+		/**
+		 * Define un evento en cuanto este sea ejecutado por keyGame
+		 * 
+		 * @param  {string} event     Define el nobre del evento 
+		 * @param  {function} handler Contiene la funcion que sera ejecutada en
+		 *                            cuanto se dispare el evento
+		 */
 		on: function(event, handler) {
 			$(window).on("keyGame."+event, handler)
 		}
 	}
-
+ 
 })(window,jQuery)
 
 
