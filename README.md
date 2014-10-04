@@ -10,5 +10,4 @@ $ bower install capjs/capjs -S
 ```
 
 
-
-![cap.png](https://raw.githubusercontent.com/CapJS/CapJS/gh-pages/images/LogoCap.png)
+<img src="https://raw.githubusercontent.com/CapJS/CapJS/gh-pages/images/LogoCap.png"></img>
