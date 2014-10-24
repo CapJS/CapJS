@@ -6,7 +6,7 @@ Es un plugin basado en [jQuery](https://github.com/jquery/jquery) para el uso de
 ### Instalar usando Bower
 
 ```sh
-$ bower install capjs/capjs -S
+$ bower install cap -S
 ```
 
 
